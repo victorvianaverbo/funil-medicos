@@ -4,442 +4,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funil de Vendas para Médicos - 21 Dias</title>
+    <title>Funil de Vendas para Médicos | Victor Viana</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
 
-    <!-- CSS Estático Bloqueante -->
+    <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="noise">
 
-    <!-- HERO SECTION (No AOS, instant load) -->
-    <section class="hero glass-hero">
-        <div class="hero-bg">
-            <div class="glow glow-1"></div>
-            <div class="glow glow-2"></div>
-            <div class="grid-overlay"></div>
-        </div>
-
-        <div class="container hero-container relative">
-            <div class="hero-content">
-                <div class="badge-wrapper">
-                    <span class="badge">Estratégia Premium para Médicos</span>
+    <!-- ========================================
+         HERO: Split Assimétrico (60/40)
+         Constraints: Noise Texture, Serif Italic Accent, Hover Lift
+         ======================================== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <!-- Coluna Esquerda: Conteúdo -->
+            <div class="hero-text">
+                <div class="badge-tech">
+                    <span class="status-dot"></span>
+                    Para Médicos Especialistas
                 </div>
 
                 <h1 class="headline">
-                    Médico, seu tempo clínico vale muito para você ainda lidar com
-                    <span class="text-gradient">"tecnologia e marketing"</span>.
+                    Médico especialista: sua autoridade já está
+                    <span class="serif-accent">construída.</span>
                 </h1>
 
                 <p class="subheadline">
-                    Em 21 dias eu te entrego o funil do seu infoproduto <strong>100% no ar e faturando alto</strong>:
-                    copy, design, VSL e anúncios. Sem você apertar um botão e respeitando seu CRM.
+                    Eu transformo ela em um sistema de vendas que funciona sem você precisar produzir conteúdo todos os dias. Eu crio o seu infoproduto, monto o funil completo e coloco para rodar. Você entra com o conhecimento. O resto é comigo.
                 </p>
 
-                <div class="hero-cta">
-                    <a href="#solucao" class="btn btn-primary">Quero delegar e faturar no digital</a>
-                    <span class="cta-note">✓ Totalmente alinhado às normas do CFM</span>
-                </div>
+                <button onclick="abrirModal()" class="btn btn-primary">
+                    Quero entender como funciona
+                    <i class="ph ph-arrow-right"></i>
+                </button>
+
+                <p class="hero-sign">Victor Viana — Estrategista digital para médicos</p>
             </div>
 
+            <!-- Coluna Direita: Visual -->
             <div class="hero-visual">
-                <div class="glass-card main-dashboard">
-                    <div class="card-header">
-                        <div class="dots">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="title">Ecossistema de Vendas</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="status-row">
-                            <span class="label">Status do Funil</span>
-                            <span class="value pulse-green">Online & Faturando</span>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="metric-row">
-                            <div class="metric">
-                                <span class="m-label">Setup Completo</span>
-                                <span class="m-value">21 Dias</span>
-                            </div>
-                            <div class="metric">
-                                <span class="m-label">Seu Esforço</span>
-                                <span class="m-value">Zero</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="hero-photo-frame">
+                    <img src="/.netlify/images?url=/images/foto-victor.png&w=600&q=90" alt="Victor Viana"
+                        loading="eager" width="600" height="600">
                 </div>
 
-                <!-- Floating Elements (Glassmorphism + Overlap) -->
-                <div class="glass-float float-1">
-                    <div class="icon">✓</div>
-                    <span>CRM Respeitado</span>
+                <!-- Floating Cards -->
+                <div class="float-card float-card-a">
+                    <div class="float-label">Operação</div>
+                    <div class="float-value">Funil Completo</div>
+                    <div class="float-trend">✓ Vendas automáticas</div>
                 </div>
-                <div class="glass-float float-2">
-                    <div class="icon">📈</div>
-                    <span>Vendas Automáticas</span>
+                <div class="float-card float-card-b">
+                    <div class="float-label">CFM</div>
+                    <div class="float-value">100% Ético</div>
+                    <div class="float-trend">Normas respeitadas</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- O PROBLEMA SECTION -->
-    <section id="problema" class="problem-section">
+    <!-- ========================================
+         SEÇÃO 1: QUEM JÁ CONFIOU
+         Arquétipo: Split Assimétrico (Lista + Cards)
+         Constraints: Hover Slide, Stagger
+         ======================================== -->
+    <section class="clients-section" id="clientes">
         <div class="container">
-            <div class="problem-wrapper">
-                <div class="problem-text" data-aos="fade-up">
-                    <h2 class="section-title">Você domina a medicina.<br><span class="text-light">E a internet?</span>
-                    </h2>
+            <h2 class="section-title-serif" data-aos="fade-up">
+                Médicos que confiam <br>
+                <span class="serif-accent">no meu trabalho.</span>
+            </h2>
 
-                    <div class="problem-paragraphs">
-                        <p>O maior erro dos médicos no digital é tentar aprender tráfego, design e copywriting depois de
-                            12h de plantão.</p>
-                        <p>Agências generalistas só fazem posts "bonitinhos" no Instagram, e não criam negócios de
-                            verdade com faturamento previsível.</p>
-                        <div class="highlight-box">
-                            <p>O seu conhecimento salva vidas. O que falta é uma <strong>engenharia de vendas
-                                    ética</strong> e validada por trás dele.</p>
-                        </div>
+            <div class="ig-grid">
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="ig-avatar">MA</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@dramonalisaazevedo_</div>
+                        <div class="ig-name">Dra. Monalisa Azevedo</div>
+                        <div class="ig-bio">Endocrinologista · Doutora (UnB) · Pós-doc NIH/EUA · Autoridade em Diabetes e Obesidade</div>
                     </div>
+                    <div class="ig-followers"><span class="ig-number">377k</span> seguidores</div>
                 </div>
 
-                <div class="problem-cards" data-aos="fade-left" data-aos-delay="100">
-                    <div class="glass-card wrong-way">
-                        <div class="card-icon error">✕</div>
-                        <h3>O Erro Comum</h3>
-                        <p>Tentar ser marqueteiro após o plantão. Cansaço, frustração e zero vendas previsíveis.</p>
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ig-avatar">MS</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@medsimple_</div>
+                        <div class="ig-name">MEDsimple</div>
+                        <div class="ig-bio">A plataforma padrão-ouro do estudante de medicina · Ciclo Básico → Residência</div>
                     </div>
-                    <div class="glass-card right-way">
-                        <div class="card-icon success">✓</div>
-                        <h3>A Engenharia Certa</h3>
-                        <p>Delegar para especialistas. Foco 100% no paciente enquanto o funil vende 24/7.</p>
+                    <div class="ig-followers"><span class="ig-number">184k</span> seguidores</div>
+                </div>
+
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="ig-avatar">CM</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@carla.gpmontenegro</div>
+                        <div class="ig-name">Profa. Dra. Carla Montenegro</div>
+                        <div class="ig-bio">Hospital Israelita Einstein · Instituto Adapta · Exercício físico para grupos especiais</div>
                     </div>
+                    <div class="ig-followers"><span class="ig-number">100k</span> seguidores</div>
+                </div>
+
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="ig-avatar">LN</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@memorimed</div>
+                        <div class="ig-name">Larissa Nóbrega | Memorimed</div>
+                        <div class="ig-bio">Médica · Arquiteta de Palácios Mentais em Medicina · Memorização fácil</div>
+                    </div>
+                    <div class="ig-followers"><span class="ig-number">85,5k</span> seguidores</div>
+                </div>
+
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="ig-avatar">CG</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@dra.carolinegiuliano</div>
+                        <div class="ig-name">Dra. Caroline Giuliano</div>
+                        <div class="ig-bio">Idealizadora do Programa Saúde Sem Remédio · Medicina do Estilo de Vida · Integrativa</div>
+                    </div>
+                    <div class="ig-followers"><span class="ig-number">29,2k</span> seguidores</div>
+                </div>
+
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="ig-avatar">MT</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@mayratrevisani</div>
+                        <div class="ig-name">Mayra Trevisani</div>
+                        <div class="ig-bio">Saúde para Pacientes Oncológicos · Comunidade Vitoriosas</div>
+                    </div>
+                    <div class="ig-followers"><span class="ig-number">29k</span> seguidores</div>
+                </div>
+
+                <div class="ig-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="ig-avatar">OB</div>
+                    <div class="ig-info">
+                        <div class="ig-handle">@oftbook</div>
+                        <div class="ig-name">Oftbook</div>
+                        <div class="ig-bio">Plataforma de educação em oftalmologia · Rotina tranquila e segura</div>
+                    </div>
+                    <div class="ig-followers"><span class="ig-number">7,1k</span> seguidores</div>
+                </div>
+            </div>
+
+            <!-- Erro vs Acerto -->
+            <div class="comparison-row" style="margin-top: 3rem;">
+                <div class="glass-card wrong-way" data-aos="fade-up" data-aos-delay="50">
+                    <div class="card-icon error">✕</div>
+                    <h3>O Erro Comum</h3>
+                    <p>Tentar fazer tudo sozinho depois do plantão. Cansaço, frustração e resultados que não aparecem.</p>
+                </div>
+                <div class="glass-card right-way" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card-icon success">✓</div>
+                    <h3>O Caminho Certo</h3>
+                    <p>Delegar para quem já fez isso antes. Você foca no paciente, o sistema vende por você.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO 3: A SOLUÇÃO -->
+    <!-- ========================================
+         SEÇÃO 2: O QUE EU CONSTRUO (Bento Grid)
+         ======================================== -->
     <section id="solucao" class="solution-section">
-        <div class="container relative">
-            <div class="solution-header" data-aos="fade-up">
-                <h2 class="section-title text-center">Como o Funil de Vendas de R$ 30 Mil/Mês vai funcionar:</h2>
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="section-title-serif">O que eu construo <span class="serif-accent">para você.</span></h2>
+                <p class="section-desc">Cada peça do seu sistema digital é criada com um único objetivo: vender enquanto você atende.</p>
             </div>
 
             <div class="bento-grid">
-                <!-- Card 1: Copy -->
-                <div class="bento-card card-copy" data-aos="fade-up" data-aos-delay="100">
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="50">
                     <div class="b-icon"><i class="ph ph-pen-nib"></i></div>
-                    <h3>Copy persuasiva mas ética</h3>
+                    <h3>Copy persuasiva e ética</h3>
                     <p>Totalmente alinhada com as normas do CFM.</p>
                 </div>
-
-                <!-- Card 2: Landing Pages -->
-                <div class="bento-card bento-wide card-lps" data-aos="fade-up" data-aos-delay="200">
-                    <div class="b-icon-bg">
-                        <!-- Abstract windows SVG -->
-                        <svg viewBox="0 0 100 100" fill="none" opacity="0.1" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="10" y="10" width="80" height="30" rx="4" fill="var(--primary)" />
-                            <rect x="10" y="50" width="35" height="40" rx="4" fill="var(--primary)" />
-                            <rect x="55" y="50" width="35" height="40" rx="4" fill="var(--primary)" />
-                        </svg>
-                    </div>
-                    <div class="content">
-                        <div class="b-icon"><i class="ph ph-layout"></i></div>
-                        <h3>Landing Pages de Alta Conversão</h3>
-                        <p>Design premium que gera confiança instantânea em cada clique.</p>
-                    </div>
+                <div class="bento-card bento-wide" data-aos="fade-up" data-aos-delay="100">
+                    <div class="b-icon"><i class="ph ph-layout"></i></div>
+                    <h3>Landing Pages de Alta Conversão</h3>
+                    <p>Design premium que gera confiança instantânea em cada clique.</p>
                 </div>
-
-                <!-- Card 3: Automação -->
-                <div class="bento-card bento-wide card-automacao" data-aos="fade-up" data-aos-delay="300">
-                    <div class="b-progress-bg">
-                        <div class="progress-track">
-                            <div class="p-dot active"></div>
-                            <div class="p-line"></div>
-                            <div class="p-dot"></div>
-                            <div class="p-line"></div>
-                            <div class="p-dot"></div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="b-icon"><i class="ph ph-tree-structure"></i></div>
-                        <h3>Automação completa</h3>
-                        <p>Páginas, VSL e E-mails integrados perfeitamente, trabalhando por você enquanto você atende.
-                        </p>
-                    </div>
+                <div class="bento-card bento-wide" data-aos="fade-up" data-aos-delay="150">
+                    <div class="b-icon"><i class="ph ph-tree-structure"></i></div>
+                    <h3>Automação completa</h3>
+                    <p>Páginas, VSL e WhatsApp integrados, trabalhando por você enquanto você atende.</p>
                 </div>
-
-                <!-- Card 4: Tráfego -->
-                <div class="bento-card card-trafego" data-aos="fade-up" data-aos-delay="400">
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="b-icon"><i class="ph ph-target"></i></div>
                     <h3>Tráfego focado</h3>
-                    <p>Anúncios validados para trazer apenas alunos altamente qualificados.</p>
+                    <p>Anúncios validados para trazer apenas pessoas altamente qualificadas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO 4: A MINHA ENGENHARIA NA PRÁTICA (RESULTADOS) -->
-    <section class="results-section">
-        <div class="container container-narrow relative">
-            <h2 class="section-title text-center text-white" data-aos="fade-up">Estratégias que já geraram mais de R$
-                2,5 Milhões</h2>
-
-            <div class="metrics-stack">
-                <div class="metric-card card-1" data-aos="zoom-y-out">
-                    <p class="m-sub">Em 4 meses, começamos um infoproduto do completo ZERO. O resultado?</p>
-                    <h3 class="m-value">R$ 250.000,00+</h3>
-                </div>
-
-                <div class="metric-card card-2" data-aos="zoom-y-out" data-aos-delay="100">
-                    <p class="m-sub">Funil Low Ticket operando sozinho todos os dias na internet</p>
-                    <h3 class="m-value">Escala Diária</h3>
-                </div>
-
-                <div class="metric-card card-3 highlight-metric" data-aos="zoom-y-out" data-aos-delay="200">
-                    <p class="m-sub">Perpetuo rodando com pico de faturamento em campanhas:</p>
-                    <h3 class="m-value text-gradient-teal">R$ 302.281,03 lucrados</h3>
-                    <div class="award-badge text-gradient-teal">
-                        <i class="ph ph-crown"></i>
-                        <span>Prêmio Hotmart Black (R$ 1.804.309,82+ totais)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO 5: PRA QUEM É ISTO? -->
-    <section class="who-section relative">
-        <!-- Abstract blur blobs no fundo -->
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-
-        <div class="container relative z-index-10">
-            <div class="who-header" data-aos="fade-up">
-                <h2 class="section-title text-center">Este serviço Premium é exclusivo para...</h2>
+    <!-- ========================================
+         SEÇÃO 3: PARA QUEM É
+         ======================================== -->
+    <section class="who-section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="section-title-serif">Isso é para você <span class="serif-accent">se...</span></h2>
             </div>
 
             <div class="who-panels">
+                <div class="who-panel" data-aos="fade-up" data-aos-delay="50">
+                    <i class="ph-fill ph-check-circle"></i>
+                    <p>Você é médico especialista e quer criar e vender o seu infoproduto</p>
+                </div>
                 <div class="who-panel" data-aos="fade-up" data-aos-delay="100">
-                    <div class="check-icon"><i class="ph ph-check-circle"></i></div>
-                    <p>Médicos com autoridade que já têm (ou vão gravar) um infoproduto, precisam escalar os resultados
-                        de forma profissional e exigem excelência na comunicação.</p>
+                    <i class="ph-fill ph-check-circle"></i>
+                    <p>Não tem tempo de aprender marketing, tráfego e ferramentas digitais</p>
                 </div>
-
+                <div class="who-panel" data-aos="fade-up" data-aos-delay="150">
+                    <i class="ph-fill ph-check-circle"></i>
+                    <p>Quer que alguém cuide de tudo, do produto até as vendas</p>
+                </div>
                 <div class="who-panel" data-aos="fade-up" data-aos-delay="200">
-                    <div class="check-icon"><i class="ph ph-check-circle"></i></div>
-                    <p>Especialistas que não têm tempo a perder tentando montar quebra-cabeças no marketing digital
-                        sozinhos.</p>
+                    <i class="ph-fill ph-check-circle"></i>
+                    <p>Quer criar uma renda que não depende da sua agenda de atendimentos</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO 6: CTA INTERMEDIÁRIO -->
-    <section class="cta-section bg-page text-center">
-        <div class="container container-focus">
-            <h2 class="cta-title" data-aos="fade-up">
-                Sua reputação médica não merece uma estratégia <i>barata</i>.
-            </h2>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <a href="#solucao" class="btn btn-primary btn-lg">Quero uma operação que vende todo dia</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO 7: SOBRE O ESPECIALISTA -->
-    <section class="expert-section bg-white">
+    <!-- ========================================
+         SEÇÃO 4: SOBRE VICTOR VIANA
+         ======================================== -->
+    <section class="expert-section" id="sobre">
         <div class="container">
-            <div class="expert-wrapper">
-                <div class="expert-photo-container" data-aos="fade-right">
-                    <!-- Foto placeholder/styling via div para efeito -->
-                    <div class="expert-photo-bg"></div>
-                    <div class="expert-photo">
-                        <img src="/.netlify/images?url=/img-placeholder.jpg&w=600&q=80" alt="Gian - Estrategista"
-                            class="photo-img" loading="lazy"
-                            onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                        <div class="photo-fallback">
-                            <i class="ph ph-user"></i>
-                        </div>
+            <div class="expert-grid">
+                <div class="expert-gallery">
+                    <div class="img-wrapper main-img" data-aos="fade-right">
+                        <img src="/.netlify/images?url=/images/victor-escritorio.jpg&w=600&q=80"
+                            alt="Victor Viana" width="600" height="800" loading="lazy">
+                    </div>
+                    <div class="img-wrapper secondary-img" data-aos="fade-up" data-aos-delay="200">
+                        <img src="/.netlify/images?url=/images/victor-premiacao.png&w=400&q=80"
+                            alt="Victor Viana - Premiação" width="400" height="400" loading="lazy">
                     </div>
                 </div>
 
-                <div class="expert-content" data-aos="fade-left" data-aos-delay="100">
-                    <h2 class="section-title">Gian, o estrategista por trás dos grandes números</h2>
-                    <p class="expert-lead">Diferente das agências genéricas, eu sou um Estrategista e Copywriter
-                        especializado em conversão. Ao contrário de quem promete números vazios, eu entrego engenharia.
-                    </p>
+                <div>
+                    <div class="badge-tech" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #94A3B8;" data-aos="fade-left">
+                        <span class="status-dot"></span>
+                        Quem sou eu
+                    </div>
 
-                    <ul class="expert-list">
-                        <li>
-                            <i class="ph ph-check-circle fill-teal"></i>
-                            <span>Mais de R$ 2,5 milhões faturados como Copywriter e Co-produtor</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check-circle fill-teal"></i>
-                            <span>Vencedor prêmio Hotmart Black</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check-circle fill-teal"></i>
-                            <span>Certificado AWAI (American Writers & Artists Institute)</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check-circle fill-teal"></i>
-                            <span>+R$ 250 mil em 4 lançamentos iniciados do zero</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check-circle fill-teal"></i>
-                            <span>Formações fortes de mercado (Empiricus, Leandro Ladeira, O Novo Mercado)</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="expert-text" data-aos="fade-left" data-aos-delay="100">
+                        <span class="meta-data">// VICTOR_VIANA</span>
+                        <h2 class="section-title-serif" style="color: white;">Victor Viana</h2>
 
-    <!-- SEÇÃO 8: FAQ E OBJEÇÕES -->
-    <section class="faq-section bg-page">
-        <div class="container">
-            <div class="faq-wrapper">
-                <div class="faq-left">
-                    <h2 class="section-title sticky-title" data-aos="fade-up">Perguntas Frequentes</h2>
-                </div>
-
-                <div class="faq-right" data-aos="fade-left" data-aos-delay="100">
-                    <div class="faq-accordion">
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <span>Isso fere as regras do CFM?</span>
-                                <i class="ph ph-caret-down"></i>
-                            </button>
-                            <div class="faq-content">
-                                <div class="faq-content-inner">
-                                    <p>Jamais. Ética médica é inviolável. O funil foi desenhado especificamente para
-                                        focar na autoridade científica e resultados permitidos, sem usar discursos de
-                                        "antes e depois" ou promessas irreais.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <span>O que exatamente está incluso nos 21 dias?</span>
-                                <i class="ph ph-caret-down"></i>
-                            </button>
-                            <div class="faq-content">
-                                <div class="faq-content-inner">
-                                    <p>O ecossistema completo: Copywriting total (Páginas, Carta de Vendas VSL,
-                                        Sequência de E-mails, Criativos), Design premium das Landing Pages, Integrações
-                                        de e-mail marketing/Checkout, configuração técnica de rastreamento e orientações
-                                        da campanha de tráfego inicial.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <span>E se eu não tiver o meu próprio produto gravado ainda?</span>
-                                <i class="ph ph-caret-down"></i>
-                            </button>
-                            <div class="faq-content">
-                                <div class="faq-content-inner">
-                                    <p>Excelente. Nossa estratégia prevê exatamente a validação da oferta ANTES de você
-                                        gravar 50 horas de aulas sem saber se vai vender. Vamos criar a copy, a página e
-                                        montar o MVP para validar o interesse real.</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        <ul class="expert-list">
+                            <li>
+                                <i class="ph-fill ph-arrow-right"></i>
+                                <span>Mais de 6 anos em projetos digitais no mercado da saúde — participei de operações que somam mais de R$10 milhões em vendas</span>
+                            </li>
+                            <li>
+                                <i class="ph-fill ph-arrow-right"></i>
+                                <span>Pós-graduado em Administração pela FGV</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO 9: FECHAMENTO FINAL -->
+    <!-- ========================================
+         SEÇÃO 5: O QUE ESTÁ INCLUÍDO
+         ======================================== -->
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="section-title-serif">O que está incluído <span class="serif-accent">no serviço.</span></h2>
+                <p class="section-desc">Você não precisa contratar designer, redator, gestor de tráfego ou técnico de plataforma. Eu cuido de tudo:</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card" data-aos="fade-up">
+                    <h3>Definição do produto ideal</h3>
+                    <p>Para a sua especialidade e público.</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="50">
+                    <h3>Copy completa</h3>
+                    <p>Página, anúncios.</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Design de todas as peças</h3>
+                    <p>Estética premium e funcional.</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="150">
+                    <h3>Configuração técnica</h3>
+                    <p>Hotmart, domínio, pixel, etc.</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Gestão de Anúncios</h3>
+                    <p>Criação e gestão dos anúncios pagos.</p>
+                </div>
+                <div class="bento-card" data-aos="fade-up" data-aos-delay="250">
+                    <h3>Acompanhamento</h3>
+                    <p>Resultados e ajustes contínuos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOTOS AUTORIDADE (Érico + Ícaro)
+         ======================================== -->
+    <section class="authority-photos">
+        <div class="container">
+            <div class="photos-grid">
+                <img src="/.netlify/images?url=/images/victor-networking.jpg&w=600&q=90"
+                    alt="Victor Viana com Érico Rocha" data-aos="fade-up" loading="lazy">
+                <img src="/.netlify/images?url=/images/victor-icaro.png&w=600&q=90"
+                    alt="Victor Viana com Ícaro de Carvalho" data-aos="fade-up" data-aos-delay="100" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO FINAL: FECHAMENTO
+         ======================================== -->
     <section class="final-section text-center">
-        <div class="container container-focus relative z-index-10">
-            <h2 class="final-title" data-aos="fade-up" data-aos-duration="1200">Não quero te vender um "cursinho".</h2>
+        <div class="container" style="max-width: 800px;">
+            <h2 class="final-title" data-aos="fade-up">
+                Quer entender se faz sentido <span class="serif-accent">para o seu caso?</span>
+            </h2>
 
-            <p class="final-text" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
-                Meu compromisso é pegar sua bagagem médica e transformá-la num sistema ativo de vendas no digital. A
-                decisão final ainda é sua: tentar criar mais um post na internet hoje ou ligar uma máquina de vendas de
-                mais de R$ 30.000 mensais sob demanda.
+            <p class="final-text" data-aos="fade-up" data-aos-delay="100">
+                Clique abaixo, preencha seu nome e WhatsApp. Eu mesmo analiso seu perfil e entro em contato.
             </p>
 
-            <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
-                <a href="#solucao" class="btn btn-primary btn-final">Quero falar sobre meu infoproduto</a>
-            </div>
+            <button onclick="abrirModal()" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200" style="font-size: 1.2rem; padding: 1.25rem 2.5rem;">
+                Falar com Victor Viana
+                <i class="ph ph-whatsapp-logo"></i>
+            </button>
         </div>
     </section>
 
-    <!-- Scripts (no fim do body) -->
+    <!-- POPUP FORMULÁRIO -->
+    <div class="modal-overlay" id="modalContato">
+        <div class="modal-card">
+            <button class="modal-close" onclick="fecharModal()" aria-label="Fechar">&times;</button>
+            <h3 class="modal-title">Vamos conversar?</h3>
+            <p class="modal-desc">Preencha abaixo e eu entro em contato pelo WhatsApp.</p>
+            <form id="form-contato" onsubmit="enviarWhatsApp(event)">
+                <div class="form-group">
+                    <label class="form-label" for="modal-nome">Seu nome</label>
+                    <input class="form-input" type="text" id="modal-nome" name="nome" placeholder="Dr. João Silva" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="modal-whatsapp">Seu WhatsApp</label>
+                    <input class="form-input" type="tel" id="modal-whatsapp" name="whatsapp" placeholder="(31) 99999-9999" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+                    Enviar
+                    <i class="ph ph-whatsapp-logo"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Inicializar AOS
             AOS.init({
-                disableMutationObserver: true, // Prevents CLS
+                disableMutationObserver: true,
                 once: true,
                 offset: 50,
                 duration: 800,
                 easing: 'ease-out-cubic'
             });
-
-            // Hero Animation pós-carregamento (sem afetar LCP/CLS negativamente)
-            setTimeout(() => {
-                const content = document.querySelector('.hero-content');
-                const visual = document.querySelector('.hero-visual');
-                if (content && visual) {
-                    content.classList.add('loaded');
-                    visual.classList.add('loaded');
-                }
-            }, 100);
-
-            // FAQ Accordion Custom Logic
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const header = item.querySelector('.faq-header');
-                const content = item.querySelector('.faq-content');
-
-                header.addEventListener('click', () => {
-                    const isOpen = header.getAttribute('aria-expanded') === 'true';
-
-                    // Close all others (optional accordion logic)
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
-                            otherItem.querySelector('.faq-content').style.maxHeight = '0px';
-                            otherItem.classList.remove('active');
-                        }
-                    });
-
-                    // Toggle current
-                    if (isOpen) {
-                        header.setAttribute('aria-expanded', 'false');
-                        content.style.maxHeight = '0px';
-                        item.classList.remove('active');
-                    } else {
-                        header.setAttribute('aria-expanded', 'true');
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                        item.classList.add('active');
-                    }
-                });
-            });
         });
+
+        function abrirModal() {
+            document.getElementById('modalContato').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModal() {
+            document.getElementById('modalContato').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modalContato').addEventListener('click', function(e) {
+            if (e.target === this) fecharModal();
+        });
+
+        function enviarWhatsApp(e) {
+            e.preventDefault();
+            var nome = document.getElementById('modal-nome').value.trim();
+            var wpp = document.getElementById('modal-whatsapp').value.trim();
+            var msg = encodeURIComponent('Olá Victor, meu nome é ' + nome + ' e meu WhatsApp é ' + wpp + '. Vim pela página de funil para médicos.');
+            window.open('https://wa.me/5531991618745?text=' + msg, '_blank');
+            fecharModal();
+        }
     </script>
 </body>
 

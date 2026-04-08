@@ -1,358 +1,358 @@
-# Especificação de Layout - Funil de Infoprodutos Médicos
+# Especificacao de Layout — Funil Medicos | Victor Viana
 
 **Identidade Visual (Global)**
-- **Fontes:** Outfit (Headings/Botões) + Inter (Body). *Justificativa: Outfit traz modernidade geométrica, Inter garante máxima legibilidade corporativa, ideal para o nicho médico.*
-- **Cores Principais:** 
-  - Primary (Deep sky blue): `#0369a1`
-  - Primary Light: `#0ea5e9`
-  - Primary Dark: `#0c4a6e`
-  - Accent (Teal): `#0d9488`
-  - Accent Light: `#14b8a6`
-  - Escuros/Texto: Main `#0f172a`, Muted `#475569`, Light `#94a3b8`
-  - Fundo: Page `#f8fafc`, Surface `#ffffff`
-- **Estética Core:** Clean, Glassmorphism, Premium Medical.
+- **Fontes:** Fraunces (Headings, serif, italic accent) + Outfit (Body, sans-serif)
+- **Paleta:**
+  - Background: `#FBFAF9`
+  - Dark/Slate: `#0F172A`
+  - Text Main: `#1A1A1A`
+  - Text Muted: `#52525B`
+  - Accent: `#4F46E5`
+  - Accent Light: `#818CF8`
+  - Border: `#E5E7EB`
+  - Success: `#10b981`
+  - Error: `#ef4444`
+- **Estetica Core:** Anthropic Minimalism + Hyros Tech. Noise texture overlay, serif italic accents, glassmorphism sutil, hover lift.
+- **Efeito Global:** `.noise::after` com `natural-paper.png`, `opacity: 0.15`, `pointer-events: none`, `z-index: 9999`, `position: fixed`.
 
 ---
 
-## Seção 1: Hero
+## Secao 1: Hero
 
-### Arquétipo e Constraints
-- **Arquétipo:** Split Assimétrico (Textos 55%, Visual Dashboard 45%)
-- **Constraints:** Glassmorphism, Float Loop (animações levitando), Pulse/Ambient Motion (indicadores de status latejando)
-- **Justificativa:** O dashboard lateral precisa transparecer tecnologia trabalhando sozinha, justificando as animações float/pulse.
+### Arquetipo e Constraints
+- **Arquetipo:** Split Assimetrico (60/40)
+- **Constraints:** Noise Texture (Efeitos), Serif Italic Accent (Tipografia), Perspective Transform (Layout), Float Loop (Movimento)
+- **Justificativa:** O split assimetrico prioriza a copy (lado esquerdo) enquanto a foto com perspectiva 3D cria profundidade e sofisticacao. Os floating cards simulam um sistema ativo, reforçando a promessa de automacao.
 
-### Conteúdo
-- **Headline:** Médico, seu tempo clínico vale muito para você ainda lidar com "tecnologia e marketing".
-- **Subheadline:** Em 21 dias eu te entrego o funil do seu infoproduto 100% no ar e faturando alto: copy, design, VSL e anúncios. Sem você apertar um botão e respeitando seu CRM.
-- **CTA:** Quero delegar e faturar no digital
+### Conteudo
+- **Badge:** "Para Medicos Especialistas" com status dot pulsante
+- **Headline:** Medico especialista: sua autoridade ja esta *construida.*
+- **Subheadline:** Eu transformo ela em um sistema de vendas que funciona sem voce precisar produzir conteudo todos os dias. Eu crio o seu infoproduto, monto o funil completo e coloco para rodar. Voce entra com o conhecimento. O resto e comigo.
+- **CTA:** Quero entender como funciona
+- **Assinatura:** Victor Viana — Estrategista digital para medicos
 
 ### Layout
-- `min-height: 100vh`, `display: flex`, `align-items: center`.
-- Container em grid `1fr 1fr`, `gap: 64px`.
-- Padding topo/base: `120px 0 80px`.
-- Lado esquerdo: Badge, Headline, Subheadline, CTA alinhados à esquerda em coluna.
-- Lado direito: Visual englobando o "Dashboard" de fundo e painéis de vidro flutuando sobre ele.
+- `min-height: 85vh`, `display: flex`, `align-items: center`, `padding: 4rem 0 3rem`.
+- Grid: `grid-template-columns: 1.2fr 1fr`, `gap: 4rem`, `align-items: center`.
+- Lado esquerdo: badge, headline, subheadline, CTA, assinatura em stack vertical, `max-width: 600px`.
+- Lado direito: foto com frame em perspectiva + 2 floating cards posicionados absolutamente.
 
 ### Tipografia
-- **Headline:** Outfit, `font-weight: 800`, `font-size: clamp(2.5rem, 5vw, 3.5rem)`, `line-height: 1.1`, `letter-spacing: -1px`, Color: `#0f172a`.
-- **Subheadline:** Inter, `font-weight: 400`, `font-size: 1.25rem`, `line-height: 1.6`, Color: `#475569`.
-- **Badge:** Outfit, `font-weight: 600`, `font-size: 0.875rem`.
+- **Badge:** Outfit, `font-size: 0.75rem`, `font-weight: 500`, `letter-spacing: 0.5px`, `text-transform: uppercase`, color `#52525B`.
+- **Headline:** Fraunces, `font-size: clamp(2.5rem, 5vw, 4rem)`, `font-weight: 500`, `line-height: 1.1`, `letter-spacing: -2px`, color `#1A1A1A`. Palavra "construida" em `font-style: italic`, `color: #4F46E5`.
+- **Subheadline:** Outfit, `font-size: 1.2rem`, `line-height: 1.7`, color `#52525B`, `max-width: 500px`.
+- **CTA:** Outfit, `font-size: 1.1rem`, `font-weight: 600`.
+- **Assinatura:** Outfit, `font-size: 0.85rem`, color `#52525B`, `letter-spacing: 0.5px`, `margin-top: 1.5rem`.
 
 ### Cores
-- Fundo: `#f8fafc` com glows de background absolutos texturizados (`#0ea5e9` e `#14b8a6` com `blur(80px)` e `opacity: 0.4`).
-- CTA: Background gradient `linear-gradient(135deg, #0369a1, #0ea5e9)`, Color: `#ffffff`, Box-shadow: `0 4px 14px 0 rgba(14, 165, 233, 0.39)`.
+- Fundo: `#FBFAF9` com noise texture overlay global.
+- Badge: `background: white`, `border: 1px solid #E5E7EB`, `border-radius: 50px`. Status dot: `background: #4F46E5`, `box-shadow: 0 0 10px #4F46E5`.
+- CTA: `background: #1A1A1A`, `color: white`, `box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1)`.
+- CTA hover: `transform: translateY(-2px)`, `box-shadow: 0 15px 30px -10px rgba(0,0,0,0.2)`.
 
 ### Elementos Visuais
-- **Dashboard Abstract:** Uma div central representando um sistema faturando. Background `#ffffff`, border `#e2e8f0`, com skeleton de gráficos.
-- **Floating Cards:** Dois cards de vidro (Glassmorphism `rgba(255,255,255,0.9)`, `blur(8px)`) que exibem notificações ("Venda Realizada"). Ícones com fundo `#14b8a6`.
-- **Pulse Dot:** Bolinha nativa sinalizando "Sistema Ativo" com animação de pulso verde (`#0d9488`).
-- **Grid Overlay:** Background no fundo `background-image: linear-gradient(...)` para lembrar engenharia/tecnologia.
+- **Foto:** `border-radius: 16px`, `overflow: hidden`, `box-shadow: 0 40px 80px -20px rgba(0,0,0,0.15)`. `transform: perspective(1000px) rotateY(-3deg)`. Hover: `rotateY(0deg)`, `transition: 0.5s`. `filter: contrast(1.05)`.
+- **Float Card A (esquerda-baixo):** `bottom: -20px`, `left: -30px`. Background white, `border: 1px solid #E5E7EB`, `border-radius: 12px`, `padding: 1rem 1.25rem`, `box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1)`. Conteudo: "Operacao / Funil Completo / ✓ Vendas automaticas".
+- **Float Card B (direita-cima):** `top: 20px`, `right: -20px`. Mesmo estilo. Conteudo: "CFM / 100% Etico / Normas respeitadas".
+- **Animacao Float:** `@keyframes float-slow { 0%,100% { translateY(0) } 50% { translateY(-8px) } }`, `duration: 5s`, `ease-in-out`, `infinite`. Card B: `animation-delay: -2s`.
 
-### Animações
-- Floating cards: `animation: float 6s ease-in-out infinite`. Diferenciação de `animation-delay: 2s` para o segundo card.
-- Pulse: `box-shadow` pulsando infinito de `0` a `10px` transparente rgba do green teal.
-- Não usar entrada inicial no carregamento principal para evitar CLS imediato.
+### Responsividade
+- `<992px`: Grid empilha `1fr`. Texto `order: 1`, visual `order: 2`, `max-width: 400px`, `margin: 0 auto`. Subheadline centralizada. Float cards `display: none`.
+- `<768px`: Headline `font-size: 2.25rem`, `letter-spacing: -1px`.
+
+---
+
+## Secao 2: Quem Ja Confiou (Clientes)
+
+### Arquetipo e Constraints
+- **Arquetipo:** Editorial List + Sticky Sidebar
+- **Constraints:** Hover Slide (Interacao), Stagger Reveal (Movimento), Perspective Card (Layout)
+- **Justificativa:** A lista editorial com linhas separadas por borda fina cria elegancia de revista. O hover slide (padding-left animado) convida a exploracao. A sidebar sticky com cards mantém o contexto emocional (erro vs acerto) visivel enquanto o usuario percorre a lista.
+
+### Conteudo
+- **Titulo:** Medicos que confiam *no meu trabalho.*
+- **Clientes (7):** Cada um com nome, descricao e seguidores
+- **Selo CFM:** imagem resultado-cfm.png
+- **Card Foto:** victor-premiacao.png
+- **Card Erro:** O Erro Comum — Tentar fazer tudo sozinho depois do plantao...
+- **Card Acerto:** O Caminho Certo — Delegar para quem ja fez isso antes...
+
+### Layout
+- `padding: var(--section-py) 0`, `background: white`, `border-top: 1px solid #E5E7EB`.
+- Titulo: largura total, `margin-bottom: 3rem`.
+- Grid: `grid-template-columns: 1.1fr 0.9fr`, `gap: 5rem`, `align-items: start`.
+- Esquerda: lista de clientes + selo CFM.
+- Direita: `.cards-stack` com `position: sticky`, `top: 100px`. Card foto + card erro + card acerto em stack vertical `gap: 1.5rem`.
+
+### Tipografia
+- **Titulo:** Fraunces, `clamp(2rem, 4vw, 3.5rem)`, `line-height: 1.1`, `letter-spacing: -1.5px`. "no meu trabalho." em `font-style: italic`, `color: #4F46E5`.
+- **Client Name:** Outfit, `font-weight: 700`, `color: #1A1A1A`.
+- **Client Desc:** Outfit, `font-size: 0.9rem`, `color: #52525B`.
+- **Client Followers:** Outfit, `font-size: 0.8rem`, `font-weight: 500`, `color: #52525B`, `white-space: nowrap`, alinhado a direita com `margin-left: auto`.
+- **Card h3:** Fraunces, `font-size: 1.35rem`, `letter-spacing: -0.5px`.
+- **Card p:** Outfit, `font-size: 0.95rem`, `line-height: 1.6`, `color: #52525B`.
+
+### Cores
+- Fundo secao: `white`.
+- Client item: `padding: 1.25rem 0`, `border-bottom: 1px solid #E5E7EB`. First child: `border-top` tambem.
+- Client item hover: `padding-left: 1rem`, `background: linear-gradient(90deg, rgba(79,70,229,0.03), transparent)`, `transition: 0.3s ease`.
+- Icone check: `color: #4F46E5`, `font-size: 1.25rem`.
+- Card Erro: `border: 1px solid rgba(239,68,68,0.2)`, `background: #FBFAF9`. Icon: `background: rgba(239,68,68,0.1)`, `color: #ef4444`.
+- Card Acerto: `background: #1A1A1A`, `color: white`, `border: none`. Texto p: `color: #94A3B8`. Icon: `background: rgba(79,70,229,0.2)`, `color: #818CF8`.
+
+### Elementos Visuais
+- **Card Foto:** `padding: 0`, `overflow: hidden`, `border: none`, `border-radius: 16px`. Img: `filter: contrast(1.05)`. Hover: img `transform: scale(1.03)`, `transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1)`.
+- **Selo CFM:** `max-width: 200px`, `opacity: 0.7`. Hover: `opacity: 1`, `transition: 0.3s`.
+
+### Animacoes
+- Titulo: `fade-up`, `800ms`.
+- Client items: `fade-up` com stagger `50ms` entre cada (delays: 50, 100, 150, 200, 250, 300, 350).
+- Cards direita: `fade-left` com stagger `100ms`.
+- Selo CFM: `fade-up`, `delay: 400ms`.
 
 ### Interatividade
-- Botão CTA: `transform: translateY(-2px)` no hover, intensificando shadow.
-- Cards flutuantes param sua animação (pause) no hover.
+- Client item hover: `padding-left: 1rem` + gradient background. `transition: all 0.3s ease`.
+- Cards hover: `transform: translateY(-4px)`, `box-shadow: 0 20px 40px rgba(0,0,0,0.06)`, `transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)`.
+- Card foto hover: img `scale(1.03)`.
 
 ### Responsividade
-- Tab (992px): Layout empilha (`grid-template-columns: 1fr`). Visual dashboard escala para o centro (`margin: 40px auto 0`). Flutuantes desaparecem ou simplificam.
-- Mobile (768px): Padding `100px 0 60px`. Headline cai para `2.25rem`. Dashboard fica menor (`width: 90%`).
+- `<992px`: Grid empilha `1fr`, `gap: 3rem`. Cards-stack `position: static`. Client-followers `display: none`.
+- `<768px`: Titulo `font-size: 1.75rem`.
 
 ---
 
-## Seção 2: O Problema
+## Secao 3: O Que Eu Construo
 
-### Arquétipo e Constraints
-- **Arquétipo:** Split Vertical (Conteúdo Texto E | Cards Visuais D)
-- **Constraints:** Hover Slide (cards que se deslocam), Stagger (animações sequenciais ao entrar), Highlight Box
-- **Justificativa:** Dividir o texto à esquerda (a dor emocional) dos cards lógicos à direita (o checklist do erro e o jeito certo) dá clareza. O hover nos cards atrai atenção para a transição do "erro" para a "solução".
+### Arquetipo e Constraints
+- **Arquetipo:** Bento Box Assimetrico
+- **Constraints:** Hover Lift (Interacao), Stagger Fade-up (Movimento), Glassmorphism sutil (Efeitos)
+- **Justificativa:** O bento box quebra a monotonia de cards iguais — celulas de tamanhos variados criam ritmo visual e hierarquia. Os cards largos (Landing Pages e Automacao) recebem destaque por serem os servicos mais impactantes.
 
-### Conteúdo
-- **Título:** Você domina a medicina. E a internet?
-- **Parágrafo 1:** O maior erro dos médicos no digital é tentar aprender tráfego, design e copywriting depois de 12h de plantão.
-- **Parágrafo 2:** Agências generalistas só fazem posts "bonitinhos" no Instagram, e não criam negócios de verdade com faturamento previsível.
-- **Parágrafo 3:** O seu conhecimento salva vidas. O que falta é uma engenharia de vendas ética e validada por trás dele.
+### Conteudo
+- **Titulo:** O que eu construo *para voce.*
+- **Subtitulo:** Cada peca do seu sistema digital e criada com um unico objetivo: vender enquanto voce atende.
+- **Card 1 (1col):** Copy persuasiva e etica — Totalmente alinhada com as normas do CFM.
+- **Card 2 (2col):** Landing Pages de Alta Conversao — Design premium que gera confianca instantanea em cada clique.
+- **Card 3 (2col):** Automacao completa — Paginas, VSL e WhatsApp integrados, trabalhando por voce enquanto voce atende.
+- **Card 4 (1col):** Trafego focado — Anuncios validados para trazer apenas pessoas altamente qualificadas.
 
 ### Layout
-- Padding: `100px 0`. Background: `#ffffff`.
-- Grid: `grid-template-columns: 1fr 1fr`, `gap: 80px`, `align-items: center`.
-- Esquerda: Textos em stack, e uma "highlight-box" (caixa de destaque) puxando o Parágrafo 3.
-- Direita: Coluna com dois cards empilhados. Um "Problema" e um "Solução Correta".
+- `padding: var(--section-py) 0`, `background: #FBFAF9`.
+- Header centralizado, `max-width: 700px`, `margin: 0 auto`.
+- Bento grid: `grid-template-columns: repeat(3, 1fr)`, `gap: 1.25rem`, `margin-top: 3rem`.
+- Card 1: `span 1`. Card 2: `span 2`. Card 3: `span 2`. Card 4: `span 1`.
 
 ### Tipografia
-- **Título:** Outfit, `font-size: 2.5rem`, `line-height: 1.2`, Color: `#0f172a`.
-- **Parágrafos:** Inter, `font-size: 1.125rem`, Color: `#475569`.
-- **Textos dos Cards:** Outfit `1.25rem` no título, Inter `1rem` no texto interno.
+- **Titulo:** Fraunces, `clamp(2rem, 4vw, 3.5rem)`, `letter-spacing: -1.5px`. "para voce." em italic `#4F46E5`.
+- **Subtitulo:** Outfit, `font-size: 1.15rem`, `color: #52525B`, `max-width: 700px`.
+- **Card h3:** Fraunces, `font-size: 1.25rem`, `letter-spacing: -0.5px`.
+- **Card p:** Outfit, `font-size: 0.95rem`, `color: #52525B`.
 
 ### Cores
-- Fundo da seção: `#ffffff`.
-- Card Errado: Border `#e2e8f0`, ícone de erro background `#fee2e2` color `#ef4444`.
-- Card Certo: Border `rgba(13, 148, 136, 0.2)`, ícone sucesso background `#ccfbf1` color `#0d9488`. Shadow base `0 10px 30px rgba(13, 148, 136, 0.05)`.
-- Highlight Box (Esquerda): BG `rgba(3, 105, 161, 0.05)`, Border left `4px solid #0369a1`.
+- Cards: `background: white`, `border: 1px solid #E5E7EB`, `border-radius: 12px`, `padding: 2rem`.
+- Icones: `color: #4F46E5`, `font-size: 1.5rem`, `margin-bottom: 1rem`.
+- Hover: `box-shadow: 0 20px 40px rgba(0,0,0,0.05)`.
 
-### Elementos Visuais
-- Caixas de layout "Problem/Solution" bem estruturadas, sem imagens pesadas, foco em tipografia limpa.
-
-### Animações
-- Revelação ao scroll (Data-AOS): Textos à esquerda dão `fade-up`, duração `800ms`, trigger à 20% do bottom, `disableMutationObserver: true`. Cards à direita entram com delay em stagger (`200ms` e `400ms`).
+### Animacoes
+- Header: `fade-up`, `800ms`.
+- Cards: `fade-up` stagger `50ms` (delays: 50, 100, 150, 200).
 
 ### Interatividade
-- Hover nos cards à direita: `transform: translateX(8px)` com `transition: transform 0.3s ease`.
+- Card hover: `transform: translateY(-5px)`, `box-shadow: 0 20px 40px rgba(0,0,0,0.05)`, `transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)`.
 
 ### Responsividade
-- Dispositivos (<992px): Grid empilha (`1fr`), gap `48px`. Cards ocupam largura total, e perdem parte da discrepância lateral se não couber.
+- `<992px`: Grid `repeat(2, 1fr)`. Cards largos `span 2`.
+- `<768px`: Grid `1fr`. Todos `span 1`.
 
 ---
 
-## Seção 3: A Solução
+## Secao 4: Para Quem E
 
-### Arquétipo e Constraints
-- **Arquétipo:** Bento Box (Grid Irregular/Mosaico)
-- **Constraints:** Hover Lift, Progress Bar (Simulação visual de preenchimento)
-- **Justificativa:** Como são 4 pontos (Copy, LPs, Automação, Tráfego), o Bento grid quebra a monotonia dos cards lado a lado, criando células de tamanhos diferentes, refletindo sistemas integrados.
+### Arquetipo e Constraints
+- **Arquetipo:** Grid Modular 2x2
+- **Constraints:** Hover Background Shift (Interacao), Fade-up Stagger (Movimento)
+- **Justificativa:** Grid 2x2 limpo e simetrico para 4 criterios — cada panel com icone + texto curto. O hover sutil muda o background para criar feedback visual elegante sem poluicao.
 
-### Conteúdo
-- **Título:** Como o Funil de Vendas de R$ 30 Mil/Mês vai funcionar:
-- **Bullet 1:** Copy persuasiva mas ética (totalmente alinhada com as normas do CFM).
-- **Bullet 2:** Landing Pages de Alta Conversão (design premium, confiança instantânea).
-- **Bullet 3:** Automação completa (Páginas, VSL e E-mails integrados, enquanto você atende).
-- **Bullet 4:** Tráfego focado (Anúncios validados para trazer alunos qualificados).
+### Conteudo
+- **Titulo:** Isso e para voce *se...*
+- **Item 1:** Voce e medico especialista e quer criar e vender o seu infoproduto
+- **Item 2:** Nao tem tempo de aprender marketing, trafego e ferramentas digitais
+- **Item 3:** Quer que alguem cuide de tudo, do produto ate as vendas
+- **Item 4:** Quer criar uma renda que nao depende da sua agenda de atendimentos
 
 ### Layout
-- Padding: `100px 0`, Background: `#f8fafc`.
-- **Header:** Título centralizado, largura máxima `700px`, margin bottom `64px`.
-- **Bento Grid:** `display: grid`, `grid-template-columns: repeat(3, 1fr)`, `grid-template-rows: auto auto`, `gap: 24px`.
-- Distribuição: 
-  - Card 1 (Copy): `grid-column: span 1` (quadrado vertical)
-  - Card 2 (LPs): `grid-column: span 2` (retângulo horizontal)
-  - Card 3 (Automação): `grid-column: span 2` (retângulo horizontal)
-  - Card 4 (Tráfego): `grid-column: span 1` (quadrado vertical)
+- `padding: var(--section-py) 0`, `background: white`, `border-top: 1px solid #E5E7EB`.
+- Titulo centralizado.
+- Grid: `grid-template-columns: 1fr 1fr`, `gap: 1.5rem`, `margin-top: 3rem`.
+- Cada panel: `display: flex`, `align-items: flex-start`, `gap: 1rem`, `padding: 2rem`.
 
 ### Tipografia
-- Título principal: Outfit, `font-size: 2.5rem`, `font-weight: 700`, alinhamento centro.
-- Bullet Titles (cards): Outfit, `font-size: 1.25rem`, `font-weight: 600`, color: `#0f172a`.
-- Bullet Texts: Inter, `font-size: 1rem`, color: `#475569`, `line-height: 1.6`.
+- **Titulo:** Fraunces, `clamp(2rem, 4vw, 3.5rem)`. "se..." em italic `#4F46E5`.
+- **Panel text:** Outfit, `font-size: 1.1rem`, `color: #1A1A1A`, `line-height: 1.5`.
 
 ### Cores
-- Fundo Seção: `#f8fafc`.
-- Cards: Background `#ffffff`, border `1px solid #e2e8f0`. Ícones `#14b8a6` (Copy) e gradients alternandos nos grandes para diferenciar.
+- Panels: `background: #FBFAF9`, `border-radius: 12px`, `border: 1px solid #E5E7EB`.
+- Panel hover: `background: #F1F5F9`, `transform: translateY(-2px)`, `transition: 0.3s`.
+- Icones: `color: #4F46E5`, `font-size: 1.5rem`.
+
+### Animacoes
+- Titulo: `fade-up`, `800ms`.
+- Panels: `fade-up` stagger `50ms` (delays: 50, 100, 150, 200).
+
+### Responsividade
+- `<992px`: Grid `1fr`.
+
+---
+
+## Secao 5: Sobre Victor Viana
+
+### Arquetipo e Constraints
+- **Arquetipo:** Split Assimetrico com Galeria Empilhada
+- **Constraints:** Dark Mode (Cor), Overlapping Images (Layout), Clip Reveal (Movimento), Monospace Meta (Tipografia)
+- **Justificativa:** Fundo escuro cria ruptura visual dramatica. A galeria com duas fotos sobrepostas (main + secondary com offset) lembra portfolio de diretor criativo. O meta-data monospace adiciona DNA tech, alinhando com a identidade Hyros.
+
+### Conteudo
+- **Badge:** "Quem sou eu" com status dot
+- **Meta:** // VICTOR_VIANA
+- **Nome:** Victor Viana
+- **Credencial 1:** Mais de 6 anos em projetos digitais no mercado da saude — participei de operacoes que somam mais de R$10 milhoes em vendas
+- **Credencial 2:** Pos-graduado em Administracao pela FGV
+
+### Layout
+- `padding: var(--section-py) 0`, `background: #0F172A`, `color: white`, `overflow: hidden`.
+- Grid: `grid-template-columns: 0.8fr 1.2fr`, `gap: 5rem`, `align-items: center`.
+- Esquerda: galeria com `position: relative`, `min-height: 450px`.
+- Direita: badge + border-left accent + meta + titulo + lista de credenciais.
+
+### Tipografia
+- **Meta:** JetBrains Mono, `font-size: 0.75rem`, `color: #818CF8`, `letter-spacing: 2px`.
+- **Nome:** Fraunces, `clamp(2rem, 4vw, 3.5rem)`, `color: white`.
+- **Credenciais:** Outfit, `font-size: 1rem`, `color: #CBD5E1`, `line-height: 1.6`.
+
+### Cores
+- Fundo: `#0F172A`.
+- Border left accent: `4px solid #4F46E5`.
+- Badge dark: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.1)`, `color: #94A3B8`.
+- Icones credenciais: `color: #818CF8`.
 
 ### Elementos Visuais
-- Gráficos abstratos SVG: No Card de LPs (span 2), um ícone simulando janelas. No Card de Automação, uma "Progress Bar" ou trilha contínua conectando pontos (steps de emails/páginas).
+- **Main img:** `width: 280px`, `height: 370px`, `top: 0`, `left: 10%`, `z-index: 2`. `border-radius: 16px`, `box-shadow: 0 30px 60px rgba(0,0,0,0.4)`, `border: 1px solid rgba(255,255,255,0.1)`.
+- **Secondary img:** `width: 220px`, `height: 220px`, `bottom: 0`, `right: 0`, `z-index: 3`. `border-color: rgba(79,70,229,0.3)`.
+- Ambas: hover img `transform: scale(1.05)`, `transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1)`.
 
-### Animações
-- Staggered `fade-up`: Todos os Bento cards sobem com atrasos sequenciais (`100ms`, `200ms`, `300ms`, `400ms`).
+### Animacoes
+- Main img: `fade-right`, `800ms`.
+- Secondary img: `fade-up`, `delay: 200ms`.
+- Badge + texto: `fade-left` com stagger `100ms`.
+
+### Responsividade
+- `<992px`: Grid `1fr`, `gap: 3rem`. Galeria `max-width: 400px`, `margin: 0 auto`.
+- `<768px`: Galeria `min-height: 300px`. Main img `220x300px`. Secondary `160x160px`.
+
+---
+
+## Secao 6: O Que Esta Incluido no Servico
+
+### Arquetipo e Constraints
+- **Arquetipo:** Modular Grid 3x2 com Container Narrow
+- **Constraints:** Hover Lift (Interacao), Stagger Reveal (Movimento), Subtle Border Animation (Efeitos)
+- **Justificativa:** Grid modular limpo de 6 servicos. Container narrow centralizado com titulo serif mantem a elegancia editorial. Hover lift nos cards com animacao sutil na borda cria feedback premium.
+
+### Conteudo
+- **Titulo:** O que esta incluido *no servico.*
+- **Subtitulo:** Voce nao precisa contratar designer, redator, gestor de trafego ou tecnico de plataforma. Eu cuido de tudo:
+- **Item 1:** Definicao do produto ideal — Para a sua especialidade e publico.
+- **Item 2:** Copy completa — Pagina, anuncios.
+- **Item 3:** Design de todas as pecas — Estetica premium e funcional.
+- **Item 4:** Configuracao tecnica — Hotmart, dominio, pixel, etc.
+- **Item 5:** Gestao de Anuncios — Criacao e gestao dos anuncios pagos.
+- **Item 6:** Acompanhamento — Resultados e ajustes continuos.
+
+### Layout
+- `padding: var(--section-py) 0`, `background: #FBFAF9`.
+- Header centralizado, `max-width: 700px`.
+- Grid: `grid-template-columns: repeat(3, 1fr)`, `gap: 1.25rem`, `margin-top: 3rem`.
+- Todos os cards `span 1` (grid uniforme 3x2).
+
+### Tipografia
+- **Titulo:** Fraunces, `clamp(2rem, 4vw, 3.5rem)`. "no servico." em italic `#4F46E5`.
+- **Subtitulo:** Outfit, `font-size: 1.15rem`, `color: #52525B`.
+- **Card h3:** Fraunces, `font-size: 1.25rem`, `letter-spacing: -0.5px`.
+- **Card p:** Outfit, `font-size: 0.95rem`, `color: #52525B`.
+
+### Cores
+- Cards: `background: white`, `border: 1px solid #E5E7EB`, `border-radius: 12px`, `padding: 2rem`.
+- Hover: `transform: translateY(-5px)`, `box-shadow: 0 20px 40px rgba(0,0,0,0.05)`, `border-color: rgba(79,70,229,0.3)`.
+
+### Animacoes
+- Header: `fade-up`, `800ms`.
+- Cards: `fade-up` stagger `50ms` (delays: 0, 50, 100, 150, 200, 250).
 
 ### Interatividade
-- Hover Lift nos cards: `transform: translateY(-4px)`, boxShadow `0 20px 40px rgba(15, 23, 42, 0.05)`, duração 400ms.
+- Card hover: `translateY(-5px)` + shadow + `border-color: rgba(79,70,229,0.3)`, `transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)`.
 
 ### Responsividade
-- `<992px`: Grid vira `grid-template-columns: repeat(2, 1fr)`. Cards 1 e 4 ficam span 1, Cards 2 e 3 ficam span 2.
-- `<768px`: Todos os cards ficam `grid-column: span 1` em coluna simétrica.
+- `<992px`: Grid `repeat(2, 1fr)`.
+- `<768px`: Grid `1fr`.
 
 ---
 
-## Seção 4: A Minha Engenharia na Prática (Resultados)
+## Secao 7: Fotos Autoridade (Erico + Icaro)
 
-### Arquétipo e Constraints
-- **Arquétipo:** Layered / Overlapping Grid Empilhados
-- **Constraints:** Dark Mode (Alto Contraste), Scroll Reveal (Text Gradient)
-- **Justificativa:** Resultados marcantes (financeiros) demandam fundo escuro para contrastar, transmitindo sobriedade corporativa. Camadas criam profundidade.
-
-### Conteúdo
-- **Título:** Estratégias que já geraram mais de R$ 2,5 Milhões
-- **Item 1:** Em 4 meses, começamos um infoproduto do completo ZERO. O resultado?
-- **Item 2:** Funil Low Ticket operando sozinho todos os dias na internet.
-- **Item 3:** Perpetuo rodando com pico de faturamento em campanhas: R$ 302.281,03 lucrados e um prêmio Hotmart Black (R$ 1.804.309,82+ ganhos totais).
+### Arquetipo e Constraints
+- **Arquetipo:** Gallery Wall (2 colunas)
+- **Constraints:** Hover Scale (Interacao), Fade-up Stagger (Movimento)
+- **Justificativa:** Duas fotos lado a lado, sem texto, sem titulo. A simplicidade maximiza o impacto visual — as fotos com Erico Rocha e Icaro de Carvalho falam por si. O hover scale sutil convida a atencao.
 
 ### Layout
-- Background: Escuro Deep Dark `#0c4a6e` a `#0f172a`.
-- Padding topo/base: `120px 0`.
-- Cards de Métricas (`max-width: 800px`) distribuídos empilhados visualmente, com gap lateral simulado e offset de cima para o meio (um em cima do outro, quebrando simetria vertical por margens aleatórias ou stagger vertical rígido).
-
-### Tipografia
-- Título principal: Outfit, `2.5rem`, color `#ffffff`.
-- Texto Principal do Card: Outfit, `font-weight: 700`, `font-size: 1.5rem` a `2.5rem` nos números "R$".
-- Subtexto: Inter, `1rem`, color `#cbd5e1`.
-
-### Cores
-- Fundo Global: Radial gradient focado central `#0c4a6e`(10% luz) caindo para `#0f172a`(bordas).
-- Cards das métricas: Background `#1e293b` (slate-800) transparente a 60%, blur 20px. Border top `1px rgba(255,255,255,0.1)`.
-- Textos dos prêmios (R$ 1.8M): Text-gradient linear (`#14b8a6` a `#0ea5e9`).
+- `padding: 3rem 0`.
+- Grid: `grid-template-columns: 1fr 1fr`, `gap: 1.5rem`, `max-width: 700px`, `margin: 0 auto`.
 
 ### Elementos Visuais
-- Os cards são placas de vidro polidas e escuras (Dark Glassmorphism). O selo figurativo do Hotmart Black em contorno dourado ou branco suave texturizado ao invés de inserção de img raster.
+- Fotos: `border-radius: 16px`, `box-shadow: 0 20px 40px rgba(0,0,0,0.08)`, `object-fit: cover`, `width: 100%`, `height: 100%`.
+- Hover: `transform: scale(1.02)`, `transition: 0.4s`.
 
-### Animações
-- Revelação `zoom-y-out` ou `fade-up`. 
-
-### Interatividade
-- Hover Highlight: a borda rgba muda sutilmente de 0.1 para 0.3 de branco sólido. Efeito sútil sem invadir o espaço.
-
-### Responsividade
-- Simples e legível. No mobile, textos de 2.5rem devem cair para `1.75rem` e empilhamento rigoroso linear (`margin-bottom: 24px` nativo).
-
----
-
-## Seção 5: Pra Quem é Isto?
-
-### Arquétipo e Constraints
-- **Arquétipo:** Split Horizontal (Um cabeçalho imponente listando 2 blocos textuais logo abaixo).
-- **Constraints:** Glassmorphism limpo de fundo claro, Imagem Blur Background (Blobs abstratos orgânicos azuis ao fundo).
-- **Justificativa:** Clarabóias azuis turquesa de fundo quebram o peso do escuro, dando o tom de renascimento, fôlego e avanço prospectivo (quem os serve).
-
-### Conteúdo
-- **Título:** Este serviço Premium é exclusivo para...
-- **Benefício 1:** Médicos com autoridade que já têm (ou vão gravar) um infoproduto, precisam escalar os resultados de forma profissional e exigem excelência na comunicação.
-- **Benefício 2:** Especialistas que não têm tempo a perder tentando montar quebra-cabeças no marketing digital sozinhos.
-
-### Layout
-- Padding `100px 0`. Fundo `#ffffff`.
-- Section Titulo alinhado no topo central (Max Width `600px`).
-- Dois grandes "Painéis", `grid-template-columns: 1fr 1fr`, gap `32px`.
-
-### Tipografia
-- Título: Outfit, `2.5rem`, color `#0f172a`.
-- Benefícios: Inter, `1.25rem`, leading `1.6`, color `#475569`. Sem títulos internos. Checkmark de chumbo.
-
-### Cores
-- Glows de Fundo: Spots absolutos de `#0ea5e9` com opacity `0.10` e blurs `120px` nos laterais.
-- Painéis: Background `#f8fafc`. Ícones de Check: SVG estilizado em `#0369a1`.
-
-### Elementos Visuais
-- Duas colunas massivas em white-space brutalista, sem bordas pesadas, deixando os textos alinhados à esquerda fluirem à vontade.
-
-### Animações
-- Fade-up clássico no load da seção com staggered columns.
-
-### Interatividade
-- Hover nas colunas faz hover de fundo suave de `#f8fafc` -> `#f1f5f9`.
+### Animacoes
+- Foto 1: `fade-up`, `800ms`.
+- Foto 2: `fade-up`, `delay: 100ms`.
 
 ### Responsividade
-- `<992px`: Grid muda para empilhamento vertical `1fr`. Margin base dos painéis `20px`.
+- `<768px`: Grid `1fr`, `max-width: 350px`.
 
 ---
 
-## Seção 6: CTA Intermediário
+## Secao 8: Fechamento e Formulario
 
-### Arquétipo e Constraints
-- **Arquétipo:** Container Narrow (Focus Center)
-- **Constraints:** Text Highlight, Hover Shadow/Scale profundo.
-- **Justificativa:** É uma interrupção da leitura focada no convencimento de reputação. O limite estreito canaliza o olhar unicamente para o botão.
+### Arquetipo e Constraints
+- **Arquetipo:** Contained Center (Focus Container)
+- **Constraints:** Dark Mode (Cor), Glow Border (Efeitos), Serif Italic Accent (Tipografia)
+- **Justificativa:** Fundo escuro cria epílogo cinematografico. Container estreito centralizado canaliza o olhar para o formulario. Borda com glow indigo sutil no form wrapper cria sensacao premium/tech.
 
-### Conteúdo
-- **Título:** Sua reputação médica não merece uma estratégia barata.
-- **CTA:** Quero uma operação que vende todo dia
-
-### Layout
-- Container estreito `max-width: 800px`, texto totalmente centralizado. Fundo `#f8fafc`. Padding `120px 0`.
-
-### Tipografia
-- Título: Outfit, `3rem` (`clamp(2rem, 4vw, 3rem)`), `font-weight: 800`, line height `1.1`. Color: `#0f172a`.
-- Palavra "barata" pode ser aplicada com `font-style: italic` ou um peso menor cromaticamente cinza.
-- Botão CTA: O global premium da página.
-
-### Cores
-- Simplicidade brutal, texto muito preto/azul muito escuro no fundo muito claro. Foco todo no botão `primary` que tem o gradiente vivo.
-
----
-
-## Seção 7: Sobre o Especialista
-
-### Arquétipo e Constraints
-- **Arquétipo:** Off-Grid Element / Asymmetric Split (A foto escapa um pouco para cima do margin base).
-- **Constraints:** Color Overlay (Na foto/placeholder), Text Stagger sequencial listado.
-- **Justificativa:** O especialista é a vitrine. O layout precisa de elegância de livro didático ou panfleto premium. Off-grid breaks criam aquele ar de portfólio rico.
-
-### Conteúdo
-- **Título:** Gian, o estrategista por trás dos grandes números
-- **Parágrafo 1:** Diferente das agências genéricas, eu sou um Estrategista e Copywriter especializado em conversão. Ao contrário de quem promete números vazios, eu entrego engenharia.
-- **Bullets:** Mais de R$ 2,5 milhões faturados como Copywriter e Co-produtor; Vencedor prêmio Hotmart Black; Certificado AWAI; +R$ 250 mil em 4 lançamentos do zero; Formações fortes (Empiricus, Leandro Ladeira, O Novo Mercado).
+### Conteudo
+- **Titulo:** Quer entender se faz sentido *para o seu caso?*
+- **Texto:** Preencha o formulario abaixo. E rapido. Vou analisar o seu perfil e, se fizer sentido trabalharmos juntos, eu mesmo entro em contato pelo WhatsApp para conversarmos.
 
 ### Layout
-- Padding: `120px 0`. Background `#ffffff`.
-- Grid de 12 colunas ou simplesmente flex box lateral: `45% (foto) 55% (texto)`.
-- Espaço lateral `64px`. A foto (`aspect-ratio: 4/5`) flutua `-40px` top em relação à linha do texto se vista de forma paralela.
+- `padding: var(--section-py) 0`, `background: #0F172A`, `color: white`.
+- Container: `max-width: 800px`, `text-align: center`.
+- Form wrapper: `max-width: 600px`, `margin: 3rem auto 0`.
 
 ### Tipografia
-- Título: Outfit, `2.5rem`, color `#0f172a`.
-- Parágrafo Principal: Inter `1.125rem`, `#475569`.
-- Bullets: `1rem` `#0f172a`.
+- **Titulo:** Fraunces, `clamp(2rem, 4vw, 3rem)`, `letter-spacing: -1.5px`, `color: white`. "para o seu caso?" em italic `#818CF8`.
+- **Texto:** Outfit, `font-size: 1.2rem`, `color: #94A3B8`, `max-width: 600px`.
 
 ### Cores
-- Elemento de foto (ou seu emulador cinza) terá uma moldura sutil de fundo deslocada uns `20px` para baixo/direita preenchida com `#0ba5e9` de opacidade 0.2, servindo como Box Shadow criativo (Editorial Shadow).
-- Bullets com checks de `#0d9488`.
+- Fundo: `#0F172A`.
+- Form wrapper: `background: #1E293B`, `border: 1px solid rgba(79,70,229,0.2)`, `border-radius: 20px`, `padding: 2.5rem`, `box-shadow: 0 0 50px rgba(79,70,229,0.1)`.
+- Inputs: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.1)`, `color: white`, `border-radius: 8px`.
+- Input focus: `border-color: #4F46E5`, `box-shadow: 0 0 0 3px rgba(79,70,229,0.15)`.
 
-### Elementos Visuais
-- O Frame fotográfico solto e assimétrico faz a magia de não ser apenas uma "seção padrão". 
-- Os bullet-points formam uma listagem densa, cheia de gatilhos corporativos.
-
-### Animações
-- Revelação da capa deslizando e texto seguindo com delay.
+### Animacoes
+- Titulo: `fade-up`, `800ms`.
+- Texto: `fade-up`, `delay: 100ms`.
+- Form wrapper: `fade-up`, `delay: 200ms`.
 
 ### Responsividade
-- `<768px`: Torna-se colunas de 100%, sem margin negativa. Título cai levemente, texto central/left.
-
----
-
-## Seção 8: FAQ e Objeções
-
-### Arquétipo e Constraints
-- **Arquétipo:** Rule of Thirds (Apenas esquerda: Titulo + Espaço / Direita: Expansíveis Accordion).
-- **Constraints:** Accordion Reveal, Smooth Height transition com Rotating Chevron Icons.
-- **Justificativa:** Simples, confiante (nicho médico adora clareza). Não enche espaço, vai direto ao ponto.
-
-### Conteúdo
-- **3 Perguntas:** 1) Regras CRM? Jamais (Ética). 2) O que inclui em 21 dias? O ecossistema completo. 3) E se não tiver produto pronto? Validamos oferta primeiro.
-
-### Layout
-- Padding `100px 0`. Background `#f8fafc`.
-- `display: flex`, gap `64px`. Lado esquerdo (33%) título, lado direito (67%) faq list.
-- Título com atributo `position: sticky; top: 120px` para quem o tiver visível na viewport grande.
-
-### Tipografia
-- Titulo: Outfit `2.5rem`, color `#0f172a`.
-- Perguntas: Outfit `1.25rem` `#0f172a`. Respostas: Inter `1rem` `#475569`.
-
-### Cores
-- Acordions: BG `#ffffff`, bottom-border `1px solid #e2e8f0`. Icon e pergunta ao fazer hover transicionam o color `#0f172a` para `#0369a1`.
-
-### Elementos Visuais
-- Chevrons ou setas pequenas de 16px. Rotacionadas via JS ou css checkbox-hack em classe estendida (`transform: rotate(180deg)`).
-
-### Interatividade
-- Hover Color nos headers. Transition suave na abertura do content `max-height`.
-
-### Responsividade
-- Mobile: `100% width` layout sequencial. Sticky cai nativamente, flutuando normalmente o flex.
-
----
-
-## Seção 9: Fechamento Final
-
-### Arquétipo e Constraints
-- **Arquétipo:** Spotlight Maximize Absolute (Única coisa preenchendo o fundo imenso e noturno).
-- **Constraints:** Minimalista Supremo.
-- **Justificativa:** Dá um "vazio" na página que engaiola a decisão final na mente do cliente sem pontos de fuga.
-
-### Conteúdo
-- **Título:** Não quero te vender um "cursinho".
-- **Parágrafo:** Meu compromisso é pegar sua bagagem médica e transformá-la num sistema ativo de vendas no digital. A decisão final ainda é sua: tentar criar mais um post na internet ou ligar uma máquina de vendas de mais de R$ 30.000 mensais sob demanda.
-- **CTA:** Quero falar sobre meu infoproduto
-
-### Layout
-- Padding Extremo `160px 0`. Background preenchendo toda a div `#0f172a`.
-- `max-width: 700px` container box em texto center.
-
-### Tipografia
-- Outfit gigante: `3rem+` branco absoluto.
-- Parágrafo de chumbo largo: `1.25rem`, `#cbd5e1`.
-- Botão massificado, robusto centralizado.
-
-### Animações
-- Tudo sobe à uma duração maior de transição (ex: `1200ms`) num silêncio visual, como epílogo de filme.
+- Mobile: titulo `font-size: 1.75rem`. Form wrapper `padding: 1.5rem`.
 
 ---
