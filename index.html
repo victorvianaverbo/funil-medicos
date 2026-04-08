@@ -10,8 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//www.transparenttextures.com">
+    <link rel="preload" href="/.netlify/images?url=/images/foto-victor.png&w=600&q=90" as="image">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
@@ -56,7 +59,7 @@
             <div class="hero-visual">
                 <div class="hero-photo-frame">
                     <img src="/.netlify/images?url=/images/foto-victor.png&w=600&q=90" alt="Victor Viana"
-                        loading="eager" width="600" height="600">
+                        loading="eager" fetchpriority="high" width="600" height="600">
                 </div>
 
                 <!-- Floating Cards -->
@@ -328,9 +331,9 @@
         <div class="container">
             <div class="photos-grid">
                 <img src="/.netlify/images?url=/images/victor-networking.jpg&w=600&q=90"
-                    alt="Victor Viana com Érico Rocha" data-aos="fade-up" loading="lazy">
+                    alt="Victor Viana com Érico Rocha" data-aos="fade-up" loading="lazy" width="600" height="800">
                 <img src="/.netlify/images?url=/images/victor-icaro.png&w=600&q=90"
-                    alt="Victor Viana com Ícaro de Carvalho" data-aos="fade-up" data-aos-delay="100" loading="lazy">
+                    alt="Victor Viana com Ícaro de Carvalho" data-aos="fade-up" data-aos-delay="100" loading="lazy" width="600" height="750">
             </div>
         </div>
     </section>
@@ -379,7 +382,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -390,6 +392,21 @@
                 duration: 800,
                 easing: 'ease-out-cubic'
             });
+
+            // Phosphor Icons - carregar após idle
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(function() {
+                    var s = document.createElement('script');
+                    s.src = 'https://unpkg.com/@phosphor-icons/web';
+                    document.body.appendChild(s);
+                });
+            } else {
+                setTimeout(function() {
+                    var s = document.createElement('script');
+                    s.src = 'https://unpkg.com/@phosphor-icons/web';
+                    document.body.appendChild(s);
+                }, 2000);
+            }
         });
 
         function abrirModal() {
