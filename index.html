@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funil de Vendas para Médicos | Victor Viana</title>
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2163536854400808');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2163536854400808&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -498,7 +515,7 @@
                 <span class="tf-step-label">01 / 04</span>
                 <h3 class="modal-title">Como posso te chamar?</h3>
                 <div class="form-group">
-                    <input class="form-input tf-input" type="text" id="tf-nome" placeholder="Dr. João Silva" autocomplete="name">
+                    <input class="form-input tf-input" type="text" id="tf-nome" placeholder="Dr. João Silva" autocomplete="name" inputmode="text">
                 </div>
                 <button class="btn btn-primary tf-next" onclick="tfAvancar(1)">
                     Continuar
@@ -513,7 +530,21 @@
                 <h3 class="modal-title">Qual seu WhatsApp?</h3>
                 <p class="modal-desc">Vou entrar em contato por lá.</p>
                 <div class="form-group">
-                    <input class="form-input tf-input" type="tel" id="tf-whatsapp" placeholder="(31) 99999-9999">
+                    <div class="tf-phone-row">
+                        <select class="form-input tf-ddi" id="tf-ddi">
+                            <option value="55" selected>+55</option>
+                            <option value="1">+1</option>
+                            <option value="351">+351</option>
+                            <option value="244">+244</option>
+                            <option value="258">+258</option>
+                            <option value="34">+34</option>
+                            <option value="39">+39</option>
+                            <option value="44">+44</option>
+                            <option value="49">+49</option>
+                            <option value="81">+81</option>
+                        </select>
+                        <input class="form-input tf-input" type="tel" id="tf-whatsapp" placeholder="31 99999-9999" inputmode="tel">
+                    </div>
                 </div>
                 <div class="tf-nav">
                     <button class="btn tf-back" onclick="tfVoltar(2)">
@@ -532,7 +563,7 @@
                 <span class="tf-step-label">03 / 04</span>
                 <h3 class="modal-title">Qual sua especialidade?</h3>
                 <div class="form-group">
-                    <input class="form-input tf-input" type="text" id="tf-especialidade" placeholder="Ex: Endocrinologia, Dermatologia...">
+                    <input class="form-input tf-input" type="text" id="tf-especialidade" placeholder="Ex: Endocrinologia, Dermatologia..." inputmode="text">
                 </div>
                 <div class="tf-nav">
                     <button class="btn tf-back" onclick="tfVoltar(3)">
@@ -710,9 +741,11 @@
             btn.disabled = true;
             btn.textContent = 'Enviando...';
 
+            var ddi = document.getElementById('tf-ddi').value;
+            var fone = document.getElementById('tf-whatsapp').value.trim();
             var dados = {
                 nome: document.getElementById('tf-nome').value.trim(),
-                whatsapp: document.getElementById('tf-whatsapp').value.trim(),
+                whatsapp: '+' + ddi + ' ' + fone,
                 especialidade: document.getElementById('tf-especialidade').value.trim(),
                 nivel: tfNivel
             };
@@ -729,9 +762,12 @@
             })
             .then(function(res) {
                 if (!res.ok) throw new Error('Erro ' + res.status);
+                /* Meta Pixel - Lead */
+                if (typeof fbq === 'function') fbq('track', 'Lead');
                 irPara(5);
             })
             .catch(function() {
+                if (typeof fbq === 'function') fbq('track', 'Lead');
                 irPara(5);
             });
         }

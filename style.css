@@ -1058,6 +1058,30 @@ ul, ol { list-style: none; }
   .auth-photo-block .img-wrapper img {
     height: 300px;
   }
+
+  /* Mobile popup fix - alinhar ao topo quando teclado abre */
+  .modal-overlay {
+    align-items: flex-start;
+    padding-top: 5vh;
+  }
+
+  .modal-card {
+    padding: 1.75rem;
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .tf-card {
+    min-height: auto;
+  }
+
+  .tf-input {
+    font-size: 16px !important;
+  }
+
+  .tf-hint {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1100,10 +1124,14 @@ ul, ol { list-style: none; }
   padding: 2.5rem;
   width: 90%;
   max-width: 420px;
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
   position: relative;
   box-shadow: 0 0 60px rgba(79, 70, 229, 0.15);
   transform: translateY(20px) scale(0.97);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-overlay.active .modal-card {
@@ -1316,6 +1344,26 @@ ul, ol { list-style: none; }
 .tf-thanks .modal-desc {
   max-width: 350px;
   margin: 0.5rem auto 0;
+}
+
+/* Phone row (DDI + number) */
+.tf-phone-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tf-ddi {
+  width: 90px;
+  min-width: 90px;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.tf-phone-row .tf-input {
+  flex: 1;
+  min-width: 0;
 }
 
 /* Shake animation */
