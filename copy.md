@@ -53,15 +53,53 @@
 - Credencial 1: Mais de 6 anos em projetos digitais no mercado da saude — participei de operacoes que somam mais de R$10 milhoes em vendas
 - Credencial 4: Pos-graduado em Administracao pela FGV
 
+## Secao: Como Funciona (Processo)
+- Titulo: Como funciona na pratica.
+- Subtitulo: Um processo claro e direto. Voce foca nos pacientes — eu cuido de todo o resto.
+- Passo 1 - Titulo: Conversa inicial
+- Passo 1 - Texto: Analiso seu perfil, sua especialidade e seu publico. Entendo seu objetivo e avalio se faz sentido trabalharmos juntos.
+- Passo 2 - Titulo: Estrategia e produto
+- Passo 2 - Texto: Defino o infoproduto ideal para o seu caso, a estrutura do funil e toda a estrategia de lancamento.
+- Passo 3 - Titulo: Construcao do funil
+- Passo 3 - Texto: Crio a copy, as paginas, as automacoes, os criativos e configuro todas as ferramentas tecnicas.
+- Passo 4 - Titulo: Lancamento e otimizacao
+- Passo 4 - Texto: Coloco tudo para rodar, ativo os anuncios e acompanho os resultados com ajustes continuos.
+
 ## Secao: O que esta incluido no servico (Escopo)
 - Titulo: O que esta incluido no servico
 - Descricao: Voce nao precisa contratar designer, redator, gestor de trafego ou tecnico de plataforma. Eu cuido de tudo:
-- Item 1: Definicao do produto ideal para a sua especialidade e publico
-- Item 2: Copy completa -- pagina, anuncios, e-mails
-- Item 3: Design de todas as pecas
-- Item 4: Configuracao de todas as ferramentas (Hotmart, dominio, pixel, etc.)
-- Item 5: Criacao e gestao dos anuncios pagos
-- Item 6: Acompanhamento dos resultados e ajustes
+- Item 1 - Titulo: Definicao do produto ideal
+- Item 1 - Texto: Entrevista de imersao + pesquisa de mercado na sua especialidade para definir o infoproduto certo para o seu publico.
+- Item 2 - Titulo: Copy completa
+- Item 2 - Texto: Pagina de vendas, scripts de anuncios e sequencia de mensagens — tudo alinhado as normas do CFM.
+- Item 3 - Titulo: Design de todas as pecas
+- Item 3 - Texto: Landing page, criativos para ads e identidade visual do produto. Estetica premium que gera confianca.
+- Item 4 - Titulo: Configuracao tecnica
+- Item 4 - Texto: Hotmart ou Kiwify, dominio, pixel de rastreamento, integracao com WhatsApp e e-mail. Tudo funcionando.
+- Item 5 - Titulo: Gestao de Anuncios
+- Item 5 - Texto: Meta Ads e Google Ads com segmentacao para publico qualificado. Criacao, teste e otimizacao continua.
+- Item 6 - Titulo: Acompanhamento
+- Item 6 - Texto: Relatorios de resultados, otimizacao continua e suporte direto comigo. Voce acompanha tudo sem se preocupar.
+
+## Secao: Perguntas Frequentes (FAQ)
+- Pergunta 1: Quanto tempo leva para o funil estar pronto?
+- Resposta 1: O prazo depende da complexidade do projeto, mas normalmente entre 30 e 60 dias o funil esta no ar e rodando.
+- Pergunta 2: Preciso aparecer em video?
+- Resposta 2: Depende da estrategia. Existem formatos que funcionam sem video. Avaliamos juntos o que faz mais sentido.
+- Pergunta 3: Funciona mesmo com poucos seguidores?
+- Resposta 3: Sim. O funil funciona com trafego pago — os anuncios levam pessoas qualificadas diretamente para a sua pagina.
+- Pergunta 4: E se eu nao tiver ideia de produto ainda?
+- Resposta 4: Faz parte do meu trabalho. Na conversa inicial, definimos o produto ideal para sua especialidade.
+- Pergunta 5: Qual o investimento?
+- Resposta 5: O valor depende do escopo. Apos nossa conversa inicial, apresento uma proposta personalizada.
+- Pergunta 6: Tudo segue as normas do CFM?
+- Resposta 6: Sim, 100%. Toda a comunicacao e criada respeitando as diretrizes do Conselho Federal de Medicina.
+
+## Secao: Fotos Autoridade
+- Titulo: Ao lado de quem e referencia.
+- Subtitulo: Aprendo com os maiores estrategistas digitais do Brasil para trazer o melhor ao seu projeto.
+- Foto 1 - Legenda: Com Erico Rocha — criador da Formula de Lancamento, metodo usado por mais de 40.000 empreendedores no Brasil.
+- Foto 2 - Legenda: Com Icaro de Carvalho — referencia nacional em estrategia digital e copywriting.
 
 ## Secao: Fechamento e Formulario
 - Titulo: Quer entender se faz sentido para o seu caso?

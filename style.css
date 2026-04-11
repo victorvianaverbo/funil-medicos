@@ -569,6 +569,61 @@ ul, ol { list-style: none; }
 }
 
 /* ==========================================
+   SEÇÃO: COMO FUNCIONA (Processo)
+   ========================================== */
+
+.process-section {
+  padding: var(--section-py) 0;
+  background: var(--bg-white);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.process-step {
+  padding: 2rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--accent);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+}
+
+.process-step h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.process-step p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
    SEÇÃO: SOBRE O ESPECIALISTA
    ========================================== */
 
@@ -683,32 +738,128 @@ ul, ol { list-style: none; }
 }
 
 /* ==========================================
+   SEÇÃO: FAQ
+   ========================================== */
+
+.faq-section {
+  padding: var(--section-py) 0;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border);
+}
+
+.faq-list {
+  max-width: 750px;
+  margin: 3rem auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+  transition: color 0.2s;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 0 1.5rem;
+}
+
+.faq-answer p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+/* ==========================================
    FOTOS AUTORIDADE
    ========================================== */
 
 .authority-photos {
-  padding: 3rem 0;
+  padding: var(--section-py) 0;
+  background: white;
+  border-top: 1px solid var(--border);
 }
 
-.photos-grid {
+.authority-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  max-width: 700px;
-  margin: 0 auto;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  align-items: start;
 }
 
-.photos-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.auth-photo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-photo-block .img-wrapper {
+  position: relative;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border);
 }
 
-.photos-grid img:hover {
-  transform: scale(1.02);
+.auth-photo-block .img-wrapper img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.auth-photo-block .img-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.auth-caption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding: 0 0.25rem;
+}
+
+.auth-caption strong {
+  color: var(--text-main);
 }
 
 /* ==========================================
@@ -833,6 +984,10 @@ ul, ol { list-style: none; }
     grid-template-columns: 1fr;
   }
 
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .expert-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -842,6 +997,12 @@ ul, ol { list-style: none; }
     min-height: 400px;
     max-width: 350px;
     margin: 0 auto;
+  }
+
+  .authority-gallery {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 3rem auto 0;
   }
 
   .float-card { display: none; }
@@ -863,6 +1024,10 @@ ul, ol { list-style: none; }
 
   .bento-wide { grid-column: span 1; }
 
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
   .photos-grid {
     grid-template-columns: 1fr;
     max-width: 350px;
@@ -883,6 +1048,15 @@ ul, ol { list-style: none; }
   .secondary-img {
     width: 170px;
     height: 170px;
+  }
+
+  .authority-gallery {
+    min-height: 350px;
+    max-width: 280px;
+  }
+
+  .auth-photo-block .img-wrapper img {
+    height: 300px;
   }
 }
 
